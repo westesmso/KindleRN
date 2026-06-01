@@ -40,6 +40,18 @@ Para Android:
 npm run android
 ```
 
+Para Android com development build:
+
+```bash
+npm run android:dev
+```
+
+Em outro terminal, inicie o Metro para dev client:
+
+```bash
+npm run start:dev
+```
+
 Para iOS:
 
 ```bash
@@ -55,6 +67,16 @@ npm run web
 ## Build Nativo
 
 Para validar o leitor PDF nativo em dispositivo real, use um development build no Android ou iOS. Em ambientes Expo Go, alguns módulos nativos podem não estar disponíveis.
+
+Fluxo recomendado no Android:
+
+1. Rode `npm run build:android` para gerar um APK via EAS Build.
+1. Instale o APK no celular.
+1. Rode `npm run start:dev` para subir o Metro no modo dev client se você estiver usando development build.
+
+Se você quiser um build de desenvolvimento em vez de APK final para testes, use `npm run build:android:dev`.
+
+Os comandos do projeto usam `npx eas`, então você não precisa instalar o EAS CLI globalmente. Se for a primeira vez, faça login com `npx eas login`.
 
 ## Estrutura do Projeto
 
